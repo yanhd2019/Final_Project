@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Econimate Chat Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+    </head>
+    <body>
+        <main>
+            <header class="title_container">
+                <h1>Welcome to Econimate!</h1>
+            </header>
+            <div class="chatting_container">
+                <ul class = "chatting_list">
+                    <li class="user">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png">
+                        <p class="msg"> Hi!</p>
+                    </li>
+                    <li class="chatbot">
+                        <img src="C:\Users\swhon\OneDrive\바탕 화면\CMU\MINI2\EL\final_project\.vscode\Econimate_logo.png">
+                        <p class="msg">Hi! Ask me anything about economics concept!</p>
+                    </li>
+                </ul>
+            <div class="input_container">
+                <input type="text" maxlength="200" class="chatting_input" onkeypress="pressEnter(this)" onkeyup="checkLength(this)">
+                <button type="button" class="send_button">ASK</button>
+            </div>
+        </main>
+        <div class="modal">
+            <div class="modal-body">
+                <button type="button" id="close-btn">X</button>
+                <div class="info"></div>
+            </div>
+    </body>
+</html>
