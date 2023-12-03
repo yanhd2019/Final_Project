@@ -145,8 +145,10 @@ def process_figures(figure_codes, folder_path='./figures'):
         figure_path = os.path.join(folder_path, f"Figure{i+1}.png")
         save_plot(modified_figure_code, figure_path, namespace)
         figure_paths.append(figure_path)
-
+#     if figure_paths == []:
+#         raise ValueError(f"Error generating plot: no plot generated")
     return figure_paths
+
 
 def create_video_clips(figure_paths, audio_paths, folder_path='./clips'):
     if not os.path.exists(folder_path):
@@ -197,6 +199,9 @@ def clear_all_folders(figures_path ='./figures',clips_path = './clips',audio_pat
 
 def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path = './audios',final_video_path = './results'):
     userinput = input
+    clear_folder(audio_path)
+    clear_folder(figures_path)
+    clear_folder(clips_path)
     exc = True
     err_str = ""
     prompt = userinput
@@ -209,6 +214,8 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
             code, explaination = segment_response(response)
         exc = False
         try:
+            if code == []:
+                raise ValueError("Regenerate response for the question, Make sure are figures are generated correctly and number of figures match the number of explainations.")
             figure_paths = process_figures(code)
         except Exception as e:
             exc = True
@@ -220,3 +227,6 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
     final_video_path = './results/final_video.mp4'
     background_path = './background1.jpg'
     combine_and_save_video(clip_paths, final_video_path, background_path)
+    clear_folder(audio_path)
+    clear_folder(figures_path)
+    clear_folder(clips_path)
