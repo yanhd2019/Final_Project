@@ -31,7 +31,7 @@ def update_libraries(requirements_path='requirements.txt'):
         print(f"An error occurred while installing the libraries: {e}")
 
 def clear_folder(folder_path):
-
+    
     if os.path.exists(folder_path):
         for filename in os.listdir(folder_path):
             file_path = os.path.join(folder_path, filename)
@@ -197,13 +197,12 @@ def clear_all_folders(figures_path ='./figures',clips_path = './clips',audio_pat
     clear_folder(figures_path)
     clear_folder(clips_path)
 
-def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path = './audios',final_video_path = './results'):
+def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path = './audios',final_video_path = './results/final_video.mp4', backgound = './background1.jpg'):
     userinput = input
     clear_folder(audio_path)
     clear_folder(figures_path)
     clear_folder(clips_path)
     exc = True
-    err_str = ""
     prompt = userinput
     response = ""
     while exc:
@@ -224,8 +223,7 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
             prompt = f"In your previous response:{response} for question{userinput}, the code part raised an error f{e}. Regenarate response to fix it."
     audio_paths = generate_audio_explanations(explaination)
     clip_paths = create_video_clips(figure_paths, audio_paths)
-    final_video_path = './results/final_video.mp4'
-    background_path = './background1.jpg'
+    background_path = backgound
     combine_and_save_video(clip_paths, final_video_path, background_path)
     clear_folder(audio_path)
     clear_folder(figures_path)
