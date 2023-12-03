@@ -19,16 +19,45 @@
                         <p class="msg">Hi! Ask me anything about economics concept!</p>
                     </li>
                 </ul>
+                
+            <!-- This part pops out when the "ASK" button is clicked -->
+                <div id="QuestionContainer" style="display: none;">
+                    <ul class = "chatting_list">
+                        <li class="user">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png">
+                            <p id="userQuestion" class="msg"> </p>
+                        </li>
+                    <!-- container for Q -->
+                    </ul>
+                </div>
+
+                
+                <div id="AnswerContainer" style="display: none;">
+                    <ul class = "chatting_list">
+                        <li class="chatbot">
+                            <img src="{{ url_for('static', filename='Econimate_logo.png') }}">
+                            <p class="msg">Answer -> Needs to be changed</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
             <div class="answer_container" id="answerContainer">
-                <p>this is the p tag</p>
+                <!-- <p>this is the p tag</p> -->
             </div>
+
+
             <div class="input_container">
                 <input id="chat_input" type="text" maxlength="200" class="chat_input" onkeypress="pressEnter(this)" onkeyup="checkLength(this)">
                 <button id="askButton" onclick="fetch_answer()">ASK</button>
             </div>
+           
             <script src="{{ url_for('static', filename='scripts.js') }}" defer> </script>
-            <script>document.getElementById('askButton').addEventListener('click',fetch_answer);</script>
+            <script>
+                document.getElementById('askButton').addEventListener('click',fetch_answer);
+                
+            </script>
+
         </main>
     </body>
 </html>
