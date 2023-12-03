@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Econimate Chat Page</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
         <main>
@@ -16,19 +15,20 @@
                         <p class="msg"> Hi!</p>
                     </li>
                     <li class="chatbot">
-                        <img src="C:\Users\swhon\OneDrive\바탕 화면\CMU\MINI2\EL\final_project\.vscode\Econimate_logo.png">
+                        <img src="{{ url_for('static', filename='Econimate_logo.png') }}">
                         <p class="msg">Hi! Ask me anything about economics concept!</p>
                     </li>
                 </ul>
+            </div>
+            <div class="answer_container" id="answerContainer">
+                <p>this is the p tag</p>
+            </div>
             <div class="input_container">
-                <input type="text" maxlength="200" class="chatting_input" onkeypress="pressEnter(this)" onkeyup="checkLength(this)">
-                <button type="button" class="send_button">ASK</button>
+                <input id="chat_input" type="text" maxlength="200" class="chat_input" onkeypress="pressEnter(this)" onkeyup="checkLength(this)">
+                <button id="askButton" onclick="fetch_answer()">ASK</button>
             </div>
+            <script src="{{ url_for('static', filename='scripts.js') }}" defer> </script>
+            <script>document.getElementById('askButton').addEventListener('click',fetch_answer);</script>
         </main>
-        <div class="modal">
-            <div class="modal-body">
-                <button type="button" id="close-btn">X</button>
-                <div class="info"></div>
-            </div>
     </body>
 </html>
