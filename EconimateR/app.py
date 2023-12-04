@@ -27,16 +27,13 @@ def ask_question():
 
     # if video_id:
         # YouTube video embedding
-    embed_code = '''<video width="1280" height="720" controls>
-        <source src="{{ url_for('static',filename='results/final_video.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag
-    </video>'''
     #     embed_code = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
-    answer = f"Video: {embed_code}"
     # else:
     #     answer = f"Question: {question} No Video Generated. Let me try again"
+    video_path = 'static/results/final_video.mp4'
+    answer = f"Video: {video_path}"
 
-    return jsonify({'answer': answer})
+    return jsonify({'answer': answer, 'video_path': video_path})
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -23,7 +23,16 @@ function fetch_answer() {
     .then(response => response.json())
     .then(data => {
         const answerContainer = document.getElementById('answerContainer');
-        answerContainer.innerHTML = `<p>Answer: ${data.answer}</p>`;
+        //answerContainer.innerHTML = `<p>Answer: ${data.answer}</p>`;
+        if(data.video_path) {
+            const videoEmbedCode = `<video width="1280" height="720" controls>
+                <source src="${data.video_path}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>`;
+            answerContainer.innerHTML = videoEmbedCode;
+        } else {
+            answerContainer.innerHTML = `<p>Answer: ${data.answer}</p>`;
+        }
     })
     .catch(error => {
         console.error('Error fetching answer:', error);

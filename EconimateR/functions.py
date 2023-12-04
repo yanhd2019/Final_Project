@@ -73,7 +73,9 @@ def query_genapi(user_input, API_key = API_key):
                             "the figures and real-life scenarios. You can have multiple [Figure] and [Explaination]. Respond with 'This is not Economic related. "
                             "Ask me anything about Economics instead!' if no economic concepts are mentioned."
                             "have the response displayed in the order of [figure - a], [explaination - a], [figure - b], [explaination - b], etc." 
-                            "Do not include anything other than code in the [figure section]")
+                            "Do not include anything other than code in the [figure section]"
+                            "Preferably use more than one figures"
+                            "Use as many graphs as you can for your explaination")
             },
             {
                 "role": "user",
@@ -224,6 +226,7 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
         try:
             if code == []:
                 raise ValueError("Regenerate response for the question, Make sure are figures are generated correctly and number of figures match the number of explainations.")
+            print(len(code))
             figure_paths = process_figures(code)
         except Exception as e:
             exc = True
