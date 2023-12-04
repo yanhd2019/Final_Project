@@ -4,8 +4,6 @@ import requests
 
 app = Flask(__name__)
 
-data = request.get_json()
-
 @app.route('/')
 def index():
 
@@ -13,22 +11,30 @@ def index():
 
 @app.route('/ask_question', methods=['POST'])
 def ask_question():
+    data = request.get_json()
     question = data['question']
 
-#    excuteAPI(question,final_video_path='./static/final_video.mp4')
+    excuteAPI(question,
+            #   backgound = '/home/ubuntu/EconimateR/background1.jpg',
+            #   figures_path ='/home/ubuntu/EconimateR/figures',
+            #   clips_path = '/home/ubuntu/EconimateR/clips',
+            #   audio_path = '/home/ubuntu/EconimateR/audios',
+            #   final_video_path='/home/ubuntu/EconimateR/static/results/final_video.mp4',
+            final_video_path= './static/results/final_video.mp4'
+            )
+              
+    # video_id = '_TsyUrSkRqU'
 
-    video_id = '_TsyUrSkRqU'
-
-    if video_id:
+    # if video_id:
         # YouTube video embedding
-#    embeded_code = ' ''<video width="1280" height="720" controls>
-#	<source src="{{ url_for('static',filename='final_video.mp4') }}" type="video/mp4">
-#	Your browser does not support the video tag
-#</video>'''
-        embed_code = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
-        answer = f"Video: {embed_code}"
-    else:
-        answer = f"Question: {question} No Video Generated. Let me try again"
+    embed_code = '''<video width="1280" height="720" controls>
+        <source src="{{ url_for('static',filename='results/final_video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag
+    </video>'''
+    #     embed_code = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
+    answer = f"Video: {embed_code}"
+    # else:
+    #     answer = f"Question: {question} No Video Generated. Let me try again"
 
     return jsonify({'answer': answer})
 

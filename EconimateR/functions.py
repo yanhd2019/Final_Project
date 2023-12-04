@@ -72,7 +72,8 @@ def query_genapi(user_input, API_key = API_key):
                             ". Each explaination should refer to each and all of "
                             "the figures and real-life scenarios. You can have multiple [Figure] and [Explaination]. Respond with 'This is not Economic related. "
                             "Ask me anything about Economics instead!' if no economic concepts are mentioned."
-                            "have the response displayed in the order of [figure - a], [explaination - a], [figure - b], [explaination - b], etc.")
+                            "have the response displayed in the order of [figure - a], [explaination - a], [figure - b], [explaination - b], etc." 
+                            "Do not include anything other than code in the [figure section]")
             },
             {
                 "role": "user",
@@ -209,7 +210,7 @@ def remove_file(file_path):
 
 def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path = './audios',final_video_path = './results/final_video.mp4', backgound = './background1.jpg'):
     remove_file(final_video_path)
-    userinput = input
+    userinput = input +". Make sure are figures are generated correctly and number of figures match the number of explainations."
     clear_folder(audio_path)
     clear_folder(figures_path)
     clear_folder(clips_path)
@@ -219,9 +220,6 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
     while exc:
         response = query_genapi(prompt)
         code, explaination = segment_response(response)
-        while len(code) != len(explaination) and len(code)> 0:
-            response = query_genapi(userinput+". Make sure are figures are generated correctly and number of figures match the number of explainations.")
-            code, explaination = segment_response(response)
         exc = False
         try:
             if code == []:
@@ -231,6 +229,7 @@ def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path
             exc = True
             clear_folder(figures_path)
             print(f"\nThere was an error in the response: \n{e}\n Regenerating...\n\n")
+            print(response)
             prompt = f"In your previous response:{response} for question{userinput}, the code part raised an error f{e}. Regenarate response to fix it."
     audio_paths = generate_audio_explanations(explaination)
     clip_paths = create_video_clips(figure_paths, audio_paths)
