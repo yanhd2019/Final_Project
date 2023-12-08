@@ -20,7 +20,8 @@ def ask_question():
             #   clips_path = '/home/ubuntu/EconimateR/clips',
             #   audio_path = '/home/ubuntu/EconimateR/audios',
             #   final_video_path='/home/ubuntu/EconimateR/static/results/final_video.mp4',
-            final_video_path= './static/results/final_video.mp4'
+            final_video_path= './static/results/final_video.mp4',
+            backgound= "./ai_final.png"
             )
               
     # video_id = '_TsyUrSkRqU'

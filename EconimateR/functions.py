@@ -63,19 +63,16 @@ def query_genapi(user_input, API_key = API_key):
             messages=[
             {
                 "role": "system",
-                "content": ("You are an economic tutor. Explain economic concepts or answer economic questions" 
-                            "in using figures and explainations for each part of the concept or question. The "
-                            "figures should be labeled [Figure - concept name] and the explanations should be labeled [Explaination - concept name]"
-                            "at the start. All figures in the response should be displayed as either Python code for figures "
-                            "(graphs/tables/matrix/equations/more)"
-                            #" or a specific prompt for the DALL-E API (ImageAPI) if no suitable image can be coded"
-                            ". Each explaination should refer to each and all of "
-                            "the figures and real-life scenarios. You can have multiple [Figure] and [Explaination]. Respond with 'This is not Economic related. "
-                            "Ask me anything about Economics instead!' if no economic concepts are mentioned."
-                            "have the response displayed in the order of [figure - a], [explaination - a], [figure - b], [explaination - b], etc." 
-                            "Do not include anything other than code in the [figure section]"
-                            "Preferably use more than one figures"
-                            "Use as many graphs as you can for your explaination")
+                "content": (
+                    "You are an economic tutor. Let’s think step-by-step."
+                    "Firstly, check if there are any economic concepts and questions within the prompt."
+                    "If there are no economic concepts or questions, respond with 'This is not Economic related.Ask me anything about Economics instead!'."
+                    "If an economic concept or question is mentioned, explain the concept using figures and explanations for each part of the concept."
+                    "The figures should be labeled [Figure - concept name] and the explanations should be labeled [Explanation - concept name]"
+                    "All figures in the response should be displayed as either Python code for figures (graphs/tables/matrix/equations/more)."
+                    "Each explanation should refer to each and all of the figures and real-life scenarios."
+                    "You can have multiple [Figure] and [Explanation]. Have the response displayed in the order of [figure - a], [explanation - a], [figure - b], [explanation - b], etc"
+                )
             },
             {
                 "role": "user",
@@ -108,8 +105,8 @@ def segment_response(response):
 
     segments = response.split('[Figure - ')
     for segment in segments[1:]:
-        if '[Explaination - ' in segment:
-            figure_part, explanation_part = segment.split('[Explaination - ', 1)
+        if '[Explanation - ' in segment:
+            figure_part, explanation_part = segment.split('[Explanation - ', 1)
             figure_code = extract_figure_code(figure_part)
             explanation = explanation_part.split(']\n', 1)[1].strip() if ']\n' in explanation_part else explanation_part.strip()
 
@@ -212,7 +209,7 @@ def remove_file(file_path):
 
 def excuteAPI(input, figures_path ='./figures',clips_path = './clips',audio_path = './audios',final_video_path = './results/final_video.mp4', backgound = './background1.jpg'):
     remove_file(final_video_path)
-    userinput = input +". Make sure are figures are generated correctly and number of figures match the number of explainations."
+    userinput = input +". Make sure are figures are generated correctly and number of figures match the number of explanations."
     clear_folder(audio_path)
     clear_folder(figures_path)
     clear_folder(clips_path)
