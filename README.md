@@ -1,6 +1,6 @@
 # Econimate
 <p align="center">
-  <img src="EconimateR/static/Econimate_logo.png" width="388">
+  <img src="/Econimate_logo.png" width="388">
 </p>
 
 
