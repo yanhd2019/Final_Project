@@ -1,6 +1,6 @@
 # Econimate
 <p align="center">
-  <img src="static/Econimate_logo.png" width="388">
+  <img src="EconimateR/static/Econimate_logo.png" width="388">
 </p>
 
 
@@ -30,7 +30,7 @@
 ## About The Project
 
 Have you ever tried to dive into the world of economics, only to find yourself overwhelmed by the countless graphs and complex notes? Well, don't worry! Meet Econimate, your friendly AI tutor that makes learning economic concepts a breeze. Whether you're a student, a professional, or simply curious about the world of economics, Econimate is here to help you grasp these concepts in a fun and easy-to-understand manner through engaging and informative videos.
-This release builds upon the previous version that utilized Google PALM2[Link to our previous project](https://github.com/yanhd2019/GoogleHackathon), introducing some advancements. It enhances overall performance and content by incorporating the advanced GPT-4.0 Turbo model. Additionally, a user-friendly UI has been implemented to elevate the overall user experience. 
+This release builds upon the previous version that utilized Google PALM2 ([Our previous project](https://github.com/yanhd2019/GoogleHackathon)), introducing some advancements. It enhances overall performance and content by incorporating the advanced GPT-4.0 Turbo model. Additionally, a user-friendly UI has been implemented to elevate the overall user experience. 
 
 
 <!-- GETTING STARTED -->
@@ -39,42 +39,31 @@ This release builds upon the previous version that utilized Google PALM2[Link to
 
 ### Importing Libraries
 
-1. Install the client library and import necessary modules.
+1. Follow the requirements.txt to install the packages needed for running Econimate and import necessary modules.
 
    ```js
-    !pip install gTTS
-    !pip install playsound
-    !pip install pyttsx3
-    !pip install spacy
-    !pip install google-generativeai
-    !pip install opencv-python
-    !pip install moviepy
-   ```
-
-   ```js
-    from functions import *
-    import google.generativeai as palm
-    import base64
-    import json
-    import pprint
-    import cv2
-    from moviepy.editor import ImageClip, AudioFileClip, concatenate_audioclips
-    import subprocess
+    import openai
+    from openai import OpenAI
     import gtts
-    from playsound import playsound
-    from IPython.display import Audio
-    from gtts import gTTS
-    import tempfile
-    import spacy
-    import subprocess
+    import moviepy.editor as mpy
+    import cv2
+    import matplotlib.pyplot as plt
     import os
+    from gtts import gTTS
+    from moviepy.editor import VideoFileClip, concatenate_videoclips, CompositeVideoClip, \
+    ImageClip, ColorClip, AudioFileClip, vfx
+    import numpy as np
     import shutil
+    import pandas as pd
+    import subprocess
+    import sys
    ```
-2. We utilized GPT-4.0 Turbo to assist in generating both the explanation and the code for creating a reference graph. To access the GPT-4.0 Turbo API, you can obtain an API_KEY from [here](https://platform.openai.com/api-keys).
+   
+3. We utilized GPT-4.0 Turbo to assist in generating both the explanation and the code for creating a reference graph. To access the GPT-4.0 Turbo API, you can obtain an API_KEY from [here](https://platform.openai.com/api-keys).
 
 
    ```js
-    const API_KEY = 'ENTER YOUR API';
+    copenai.api_key = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -110,19 +99,18 @@ An example of potential usage can be seen in [this video](new_video_link).
 
 Here are some known problems and limitations of the project that we strive to resolve in future implementations:
 
-Econimate currently faces a notable limitation in its extended time required for video generation, taking 4 or 7minutes due to local model execution variations in user computing power. To address this, a migration to a cloud server is planned to enhance computing capabilityies and ensure quicker and more consistent video generation. It will allow Econimate to accomodate multiple simulateneous users as well. 
+Econimate currently faces a notable limitation in its extended time required for video generation, taking 4 or 7minutes due to local model execution variations in user computing power. To address this, a migration to a cloud server is planned to enhance computing capabilityies and ensure quicker and more consistent video generation. It will also allow Econimate to accomodate multiple simulateneous users as well. 
 
 Future plans involve transforming Econimate into a mobile Application for broader accessibility, expanding its scope to cover various subjects, and enabling multilingual support for a more diverse user base. 
 
 <!-- ROADMAP -->
 ## Roadmap
- Stage 1:
- 
+
+At present, we've set up a process where you can ask your economics questions from our website which runs on a local environment. In response, you'll receive a video providing answers, which will be displayed directly on the website. You can check out the steps Econimate have followed in the diagram below, and you can access the code to see how it all works. 
 <p align="center">
   <img src="/roadmap.png">
 </p>
 
-At present, we've set up a process where you can ask your economics questions from our webstie which runs on a local environment. In response, you'll receive a video prociding answers, which will be displayed directly on the website. You can check out the steps Econimate have followed in the diagram above, and you can access the code to see how it all works. 
 
 This is the steps we've followed to develop the website:
 
@@ -130,13 +118,7 @@ This is the steps we've followed to develop the website:
   <img src="/website implementation.png">
 </p>
 
-A pivotal milestone in reaching this stage involved training the Palm2 API using our prompts. If you're interested in seeing how this was accomplished, you can access the [video](new_video_link) that demonstrates the process. It's a great way to gain insight into the behind-the-scenes work that contributes to the chatbot's performance.
-
-
-
-Stage 2: 
-
-Our next exciting endeavor is to develop a chatbot-like interface that allows you to ask your questions directly and receive video answers in real-time. We're working diligently to bring this feature to life, making the process of accessing economic insights even more seamless and convenient for you. Stay tuned for our upcoming enhancements!
+A pivotal milestone in reaching this stage involved training the GPT 4.0 Turbo API using our prompts. If you're interested in seeing how this was accomplished, you can access the [video](new_video_link) that demonstrates the process. It's a great way to gain insight into the behind-the-scenes work that contributes to the chatbot's performance.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
