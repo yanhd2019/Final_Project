@@ -30,7 +30,7 @@
 ## About The Project
 
 Have you ever tried to dive into the world of economics, only to find yourself overwhelmed by the countless graphs and complex notes? Well, don't worry! Meet Econimate, your friendly AI tutor that makes learning economic concepts a breeze. Whether you're a student, a professional, or simply curious about the world of economics, Econimate is here to help you grasp these concepts in a fun and easy-to-understand manner through engaging and informative videos.
-This release builds upon the previous version that utilized Google PALM2 ([Our previous project](https://github.com/yanhd2019/GoogleHackathon)), introducing some advancements. It enhances overall performance and content by incorporating the advanced GPT-4.0 Turbo model. Additionally, a user-friendly UI has been implemented to elevate the overall user experience. 
+This release extends the functionality of the previous version, which utilized Google PALM2 API ([Our previous project](https://github.com/yanhd2019/GoogleHackathon)), by introducing several advancements. We enhanced overall performance and content by incorporating the advanced GPT-4.0 Turbo model. Additionally, we have implemented a user-friendly UI to elevate the overall user experience. 
 
 
 <!-- GETTING STARTED -->
@@ -39,7 +39,7 @@ This release builds upon the previous version that utilized Google PALM2 ([Our p
 
 ### Importing Libraries
 
-1. Follow the requirements.txt to install the packages needed for running Econimate and import necessary modules.
+1. Follow the **requirements.txt** to install the packages needed for running Econimate and import necessary modules.
 
    ```js
     import openai
@@ -63,7 +63,7 @@ This release builds upon the previous version that utilized Google PALM2 ([Our p
 
 
    ```js
-    copenai.api_key = 'ENTER YOUR API';
+    openai.api_key = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -73,9 +73,9 @@ This release builds upon the previous version that utilized Google PALM2 ([Our p
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To use Econimate, simply run the provided code in your local Python environment and enter your Economics doubts on the prompt and press "ASK". Econimate will then return a video that explains the concept in a clear and concise way, using graphs and audio to make your learning easy and fun.
+To use Econimate, simply run the provided code in your local Python environment and enter your Economics doubts on the prompt and press "ASK". Econimate will then return a video directly ont eh chat that explains the concept in a clear and concise way, using graphs and audio to make your learning easy and fun.
 
-Have a look at how the webpage looks like:
+Have a look at our website's UI:
 
 ![WhatsApp 이미지 2023-12-03, 16 51 41_946a3f92](https://github.com/yanhd2019/Final_Project/assets/48376588/3c80017f-d253-48a5-aad3-8f40e870bfd0)
 
@@ -106,7 +106,7 @@ Future plans involve transforming Econimate into a mobile Application for broade
 <!-- ROADMAP -->
 ## Roadmap
 
-At present, we've set up a process where you can ask your economics questions from our website which runs on a local environment. In response, you'll receive a video providing answers, which will be displayed directly on the website. You can check out the steps Econimate have followed in the diagram below, and you can access the code to see how it all works. 
+At present, we've set up a process where you can ask your economics questions from our website which runs in a local environment. In response, you'll receive a video providing answers, which will be displayed directly on the website. You can check out the steps Econimate have followed in the diagram below, and you can access the code to see how it all works. 
 <p align="center">
   <img src="/roadmap.png">
 </p>
@@ -134,7 +134,7 @@ Created with ❤️ by:
 <li> Jiayuan Ye - jye3@andrew.cmu.edu   (Prompt Engineering) </li>
 <li> Yukta Butala - ybutala@andrew.cmu.edu (Report Writing) </li>
 </ol>
-We are excited to continue this project for the rest of our Experiential Learning Programme.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,7 +143,7 @@ We are excited to continue this project for the rest of our Experiential Learnin
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-In our journey through this hackathon, we've received invaluable support and guidance from some remarkable individuals. Special gratitude goes out to Josh Gordon for his invaluable introduction to the Palm2 API, which played a pivotal role in our project. We also want to express our appreciation to the entire Google team for their dedicated guidance and mentorship over the past week. We would like to extend our heartfelt thanks to Prof. Ganesh Mani for his unwavering support and encouragement. Your collective efforts and insights have been instrumental in our success. Thank you all for your contributions to this incredible experience!
+As a result of the experiential learning course at CMU, our team members have gained invaluable insights while working on this project. We express our gratitude to the Google hackathon for hosting the event and providing the initial impetus for our project. Special thanks go to Prof.Ganesh Mani for his consistent support and encouragement, which have been instrumental in our success. We appreciate everyone's collective efforts and insights that have contributed to this remarkable experience. Thank you all for your significant contributions! 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
