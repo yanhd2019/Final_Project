@@ -81,9 +81,9 @@ To use Econimate, simply run the provided code in your local Python environment 
 Have a look at our website's UI:
 
 <p align="center">
-  <img src="/website_initial page.png" width="388">
+  <img src="/website_initial page.jpg" width="388">
 </p>
-<p>
+<p align="center">
   <img src="/image.png" width="388">
 </p>
 
