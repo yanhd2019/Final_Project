@@ -81,10 +81,16 @@ To use Econimate, simply run the provided code in your local Python environment 
 Have a look at our website's UI:
 
 ![WhatsApp 이미지 2023-12-03, 16 51 41_946a3f92](https://github.com/yanhd2019/Final_Project/assets/48376588/3c80017f-d253-48a5-aad3-8f40e870bfd0)
+<p align="center">
+  <img src="/image.png" width="388">
+</p>
 
 Have a look at how amazing videos Econimate generates:
 
-https://github.com/yanhd2019/GoogleHackathon/assets/149416928/68382afd-158e-41e1-93e0-fe67ab864576
+<video width="320" height="240" controls>
+  <source src="/Econimate_video.mp4" type="video/mp4">
+</video>
+
 
 Here are some examples of how you can use Econimate:
 1. To learn about a new economic concept, such as inflation or supply and demand.
@@ -92,8 +98,6 @@ Here are some examples of how you can use Econimate:
 3. To stay up-to-date on the latest economic news and research.
 
 Econimate is a great resource for anyone who wants to learn more about economics, regardless of the level of expertise. However, please keep in mind that it is still in beta and may not be able to answer all queries perfectly. So, please be patient and understanding as we continue to develop and improve Econimate.
-
-An example of potential usage can be seen in [this video](new_video_link).
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -121,7 +125,7 @@ This is the steps we've followed to develop the website:
   <img src="/website implementation.png">
 </p>
 
-A pivotal milestone in reaching this stage involved training the GPT 4.0 Turbo API using our prompts. If you're interested in seeing how this was accomplished, you can access the [video](new_video_link) that demonstrates the process. It's a great way to gain insight into the behind-the-scenes work that contributes to the chatbot's performance.
+A pivotal milestone in reaching this stage involved training the GPT 4.0 Turbo API using our prompts. If you're interested in seeing how this was accomplished, you can access the [video](https://www.youtube.com/watch?v=9LfUBWllo_M) that demonstrates the process. It's a great way to gain insight into the behind-the-scenes work that contributes to the chatbot's performance.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
