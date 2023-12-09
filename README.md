@@ -87,8 +87,9 @@ Have a look at our website's UI:
   <img src="/image.png" width="388">
 </p>
 
-Have a look at how amazing videos Econimate generates in this [Link](https://drive.google.com/file/d/1MX2y01SKN5AoYjYHmg7WwMP3RA4WDQI2/view?usp=sharing)
+Have a look at how amazing videos Econimate generates:
 
+https://github.com/yanhd2019/Final_Project/assets/48376588/a3c8dbe0-e0eb-4059-bdcf-2894b4eccf46
 
 Here are some examples of how you can use Econimate:
 1. To learn about a new economic concept, such as inflation or supply and demand.
