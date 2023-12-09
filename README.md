@@ -29,7 +29,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Have you ever tried to dive into the world of economics, only to find yourself overwhelmed by the countless graphs and complex notes? Well, don't worry! Meet Econimate, your friendly AI tutor that makes learning economic concepts a breeze. Whether you're a student, a professional, or simply curious about the world of economics, Econimate is here to help you grasp these concepts in a fun and easy-to-understand manner through engaging and informative videos.
+Have you ever tried to dive into the world of economics, only to find yourself overwhelmed by the countless graphs and complex notes? Well, don't worry! Meet Econimate, your friendly AI tutor that makes learning economic concepts a breeze. Whether you're a student, a professional, or simply curious about the world of economics, Econimate is here as your 24/7 AI tutor, helping you grasp these concepts in a fun and easy-to-understand manner through engaging and informative videos.
+
+Econimate can serve as a valuable learning resource for individuals with disabilities, including those with ADHD, by providing interactive and engaging multimedia elements. 
+
 This release extends the functionality of the previous version, which utilized Google PALM2 API ([Our previous project](https://github.com/yanhd2019/GoogleHackathon)), by introducing several advancements. We enhanced overall performance and content by incorporating the advanced GPT-4.0 Turbo model. Additionally, we have implemented a user-friendly UI to elevate the overall user experience. 
 
 
