@@ -80,16 +80,15 @@ To use Econimate, simply run the provided code in your local Python environment 
 
 Have a look at our website's UI:
 
-![WhatsApp 이미지 2023-12-03, 16 51 41_946a3f92](https://github.com/yanhd2019/Final_Project/assets/48376588/3c80017f-d253-48a5-aad3-8f40e870bfd0)
+<p align="center">
+  <img src="/website_initial page.png" width="388">
+</p>
 <p align="center">
   <img src="/image.png" width="388">
 </p>
 
 Have a look at how amazing videos Econimate generates:
-
-<video width="320" height="240" controls>
-  <source src="/Econimate_video.mp4" type="video/mp4">
-</video>
+https://drive.google.com/drive/folders/1ZuRLDGDmmMN62pf9mQvL526q42YGEFu9
 
 
 Here are some examples of how you can use Econimate:
