@@ -81,14 +81,11 @@ To use Econimate, simply run the provided code in your local Python environment 
 Have a look at our website's UI:
 
 <p align="center">
-  <img src="/website_initial page.png" width="388">
-</p>
-<p align="center">
-  <img src="/image.png" width="388">
+  <img src="/website_initial page.png" width="300">
+  <img src="/image.png" width="300">
 </p>
 
-Have a look at how amazing videos Econimate generates:
-https://drive.google.com/drive/folders/1ZuRLDGDmmMN62pf9mQvL526q42YGEFu9
+Have a look at how amazing videos Econimate generates in this [Link](https://drive.google.com/drive/folders/1ZuRLDGDmmMN62pf9mQvL526q42YGEFu9)
 
 
 Here are some examples of how you can use Econimate:
